@@ -1,0 +1,14 @@
+.jumbotron {
+    background-color: wheat;
+    margin-bottom: 0;
+}
+
+
+.test {
+    background-image: url("/img/WB.png");
+    color: white;
+    padding: 20px;
+    display: grid;
+    justify-items: center;
+}
+
