@@ -5,7 +5,7 @@ class Cards extends Component {
     return (
       <div class="card-group">
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card cap" />
+          <img class="card-img-top" src="img/WB.png" alt="Card cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -19,7 +19,7 @@ class Cards extends Component {
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card cap" />
+          <img class="card-img-top" src="img/WB.png" alt="Card cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
@@ -32,7 +32,7 @@ class Cards extends Component {
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="..." alt="Card cap" />
+          <img class="card-img-top" src="img/WB.png" alt="Card cap" />
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">
