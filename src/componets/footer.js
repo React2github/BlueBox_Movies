@@ -4,19 +4,19 @@ class Footer extends Component {
   // state = {  }
   render() {
     return (
-      <ul class="nav justify-content-center">
-        <li class="nav-item">
-          <a class="nav-link active" href="#home">
+      <ul className="nav justify-content-center">
+        <li className="nav-item">
+          <a className="nav-link active" href="#home">
             Home
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#movies">
+        <li className="nav-item">
+          <a className="nav-link" href="#movies">
             Movies
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
+        <li className="nav-item">
+          <a className="nav-link" href="#">
             Members
           </a>
         </li>
