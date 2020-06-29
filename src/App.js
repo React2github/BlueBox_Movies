@@ -5,6 +5,7 @@ import Main from "./componets/main"
 import Search from "./componets/search"
 import Results from "./componets/results"
 import axios from "axios"
+import Popup from "./componets/Popup"
 
 function App() {
   const [state, setState] = useState({
@@ -33,12 +34,31 @@ const search = (e) => {
     });
   }
 
+ const openPopup = id => {
+   axios(apiurl + "&i=" + id).then(({ data }) => {
+     let result = data;
+   
+     setState(prevState => {
+       return {...prevState, selected: result}
+     })
+   })
+ }
+
+ const closePopup = () => {
+   setState(prevState => {
+     return { ...prevState, selected: {} }
+   });
+ }
+
   return (
     <div>
     <Header />
     <Main />
     <Search handleInput={handleInput} search={search}/>
-    <Results results={state.results} />
+    <Results results={state.results} openPopup={openPopup}/>
+
+    {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} 
+    closePopup={closePopup} /> : false }
     <Footer />
     </div>
   );
