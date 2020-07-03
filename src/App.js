@@ -6,6 +6,7 @@ import Search from "./componets/search"
 import Results from "./componets/results"
 import axios from "axios"
 import Popup from "./componets/Popup"
+import Counter from "./componets/redux";
 
 function App() {
   const [state, setState] = useState({
@@ -54,6 +55,7 @@ const search = (e) => {
     <div>
     <Header />
     <Main />
+    <Counter />
     <Search handleInput={handleInput} search={search}/>
     <Results results={state.results} openPopup={openPopup}/>
 

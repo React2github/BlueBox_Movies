@@ -1,33 +1,46 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import thunk from 'redux-thunk';
+import axios from "axios";
 
 import { Provider } from "react-redux";
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
 
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return state.concat([action.text])
+const initialState = {
+counter: 0
+};
+
+
+const app = (state = initialState,action) => { 
+     switch (action.type) {
+    case 'INCREMENT':
+      return { 
+        counter: state.counter + 1  
+      }
+      case 'DECREMENT':
+        return {
+          counter: state.counter - 1 
+        }
       default:
         return state 
   }
 }
 
-const store = createStore(todos, ['Use Redux']) 
 
-store.dispatch({
-  type: 'ADD_TODO',
-  text: 'Read the docs'
-})
+
+const store = createStore(app, applyMiddleware(thunk)) 
+
+
 
 
 ReactDOM.render(
-  <Provider store={store}>
+ 
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </Provider>,
+     <Provider store={store}>
+     <App />
+     </Provider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
