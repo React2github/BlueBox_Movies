@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import thunk from 'redux-thunk';
-
+import Popup from "./componets/Popup"
 
 import { Provider } from "react-redux";
 import {createStore, applyMiddleware} from 'redux';
@@ -13,23 +13,40 @@ const initialState = {
   s: "",
   results: [],
   selected: {},
-  secretSauce: [] 
+  Shopping: [],
+  Wishlist: [],
+  Rentals: [],
+  Rating: [],
+  Bad: []
 };
 
-var movies = [' Harry Potter,', " Cat in The Hat"]
-var notmovies = ['Not harry', 'not cat in the hat']
 
 function app (state = initialState,action) { 
      switch (action.type) {
-    case 'INCREMENT':
+    case 'RENT':
       return {
         ...state,
-        results: state.results.concat(movies)
+        Rentals: state.Rentals.concat('Added movie to rental list')
       }
-      case 'DECREMENT':
+      case 'LIST':
         return {
           ...state,
-          secretSauce: state.secretSauce.concat(notmovies)
+          Wishlist: state.Wishlist.concat('Saved Movie to Wishlist')
+        }
+      case 'SHOP':
+        return {
+          ...state,
+          Shopping: state.Shopping.concat('Added Movie to Cart')
+        }
+      case 'RATE':
+        return {
+         ...state,
+         Rating: state.Rating.concat('Added movie to top 5 list')
+        }
+      case 'BAD':
+        return {
+        ...state,
+        Bad: state.Bad.concat('Added movie to bad list')
         }
       default:
         return state 

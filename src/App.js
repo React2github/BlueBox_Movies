@@ -7,12 +7,14 @@ import Results from "./componets/results"
 import axios from "axios"
 import Popup from "./componets/Popup"
 import Counter from "./componets/redux";
+import Testlist from './componets/wishlist';
 
 function App() {
   const [state, setState] = useState({
    s: "",
    results: [],
-   selected: {} 
+   selected: {},
+   WishList: []
   });
   const apiurl="http://www.omdbapi.com/?apikey=2d91e6e4";
 
@@ -51,16 +53,25 @@ const search = (e) => {
    });
  }
 
+ function hello () {
+   console.log('hello')
+ }
+
+ const Wishlist = () => {
+  setState(prevState => {
+    return { ...prevState, WishList: {hello} }
+})
+}
+
   return (
     <div>
     <Header />
     <Main />
-    <Counter />
     <Search handleInput={handleInput} search={search}/>
     <Results results={state.results} openPopup={openPopup}/>
 
     {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} 
-    closePopup={closePopup} /> : false }
+    closePopup={closePopup} Wishlist={Wishlist}/> : false }
     <Footer />
     </div>
   );

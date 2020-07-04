@@ -18,7 +18,7 @@ import React, { Component } from 'react';
         return (
           
             <div>
-                <div>{this.props.results}</div>
+                 <div>{this.props.results}</div>
                 <div>{this.props.secretSauce}</div>
                 <button onClick={this.add}>Up</button>
                 <button onClick={this.lose}>down</button>
