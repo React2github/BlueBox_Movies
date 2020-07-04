@@ -1,21 +1,26 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
-
  class Counter extends Component {
 
-    win = () => {
-        this.props.win();
+    add = () => {
+        this.props.add();
+        
     }
 
     lose = () => {
         this.props.lose();
+
+    
     }
+
     render() {
         return (
+          
             <div>
-                <span>{this.props.counter}</span>
-                <button onClick={this.win}>up</button>
+                <div>{this.props.results}</div>
+                <div>{this.props.secretSauce}</div>
+                <button onClick={this.add}>Up</button>
                 <button onClick={this.lose}>down</button>
             </div>
         )
@@ -25,13 +30,14 @@ import React, { Component } from 'react';
 
 const mapStateToProps = (state) => {
     return {
-        counter: state.counter
+        results: state.results,
+        secretSauce: state.secretSauce
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
         return { 
-            win: () => {
+            add: () => {
             return dispatch({type: "INCREMENT"})
         },
         lose: () => {
