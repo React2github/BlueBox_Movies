@@ -2,11 +2,24 @@ import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css"
 
 class Header extends Component {
-    // state = {  }
+     state = { 
+       counter: null
+      }
+
+      componentDidMount() {
+        this.setState ({
+          counter:"Log in"
+        })
+        alert("Remember to sign in") 
+        }
+      
     render() { 
+    
         return ( 
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="">BlockBuster</a>
+        <span>{this.state.counter}</span>
+        <button onClick={() => {this.setState({counter: "Signed In"})}}>Login</button>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
