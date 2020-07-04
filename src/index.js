@@ -2,11 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import thunk from 'redux-thunk';
-import Popup from "./componets/Popup"
 
 import { Provider } from "react-redux";
 import {createStore, applyMiddleware} from 'redux';
-import Results from './componets/results';
+
 
 
 const initialState = {
@@ -55,11 +54,7 @@ function app (state = initialState,action) {
 
 
 
-
-
-
 const store = createStore(app, applyMiddleware(thunk)) 
-
 
 
 
