@@ -5,13 +5,11 @@ class Cards extends Component {
     return (
       <div class="card-group">
         <div class="card">
-          <img class="card-img-top" src="img/WB.png" alt="Card cap" />
+          <img class="card-img-top" src="img/harry.jpg" alt="Card cap" />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Harry Potter</h5>
             <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
+
             </p>
           </div>
           <div class="card-footer">
@@ -19,12 +17,11 @@ class Cards extends Component {
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="img/WB.png" alt="Card cap" />
+          <img class="card-img-top" src="img/cars.jpg" alt="Card cap" />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Cars</h5>
             <p class="card-text">
-              This card has supporting text below as a natural lead-in to
-              additional content.
+          
             </p>
           </div>
           <div class="card-footer">
@@ -32,13 +29,11 @@ class Cards extends Component {
           </div>
         </div>
         <div class="card">
-          <img class="card-img-top" src="img/WB.png" alt="Card cap" />
+          <img class="card-img-top" src="img/batman.jpg" alt="Card cap" />
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
+            <h5 class="card-title">Batman</h5>
             <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This card has even longer content
-              than the first to show that equal height action.
+
             </p>
           </div>
           <div class="card-footer">

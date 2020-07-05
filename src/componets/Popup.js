@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 
 
- class Popup extends React.Component {
+ class Popup extends Component {
   add = () => {
     this.props.add();
 }
@@ -26,7 +26,6 @@ import { connect } from 'react-redux';
   render() {
     const { selected, closePopup} = this.props;
     return (
-      
 <section className="popup">
   <div className="content">
       <h2>{ selected.Title } <span>({ selected.Year })</span></h2>
@@ -34,15 +33,10 @@ import { connect } from 'react-redux';
     <div className="plot">
         <img src={selected.Poster} />
     <p>{selected.Plot}</p>
-    <span>{this.props.Wishlist}</span>
-    <button onClick={this.add}>Add to Wish List</button>
-    <span>{this.props.Shopping}</span>
-    <button onClick={this.shop}>Shopping Cart</button>
-    <span>{this.props.Rentals}</span>
+    <button onClick={this.add}>Wish List</button>
+    <button onClick={this.shop}>Cart</button>
     <button onClick={this.rent}>Rent</button>
-    <span>{this.props.Rating}</span>
     <button onClick={this.rate}>Rate</button>
-    <span>{this.props.Bad}</span>
     <button onClick={this.bad}>Bad</button>   
     </div>
     <button className="close" onClick={closePopup}>Close</button>
@@ -51,6 +45,10 @@ import { connect } from 'react-redux';
     )
 }}
  
+
+
+
+
 const mapStateToProps = (state) => {
   return {
       Wishlist: state.Wishlist,

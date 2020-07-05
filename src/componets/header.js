@@ -19,7 +19,7 @@ class Header extends Component {
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <a className="navbar-brand" href="">BlockBuster</a>
         <span>{this.state.counter}</span>
-        <button onClick={() => {this.setState({counter: "Signed In"})}}>Login</button>
+        <button onClick={() => {this.setState({counter: "Signed"})}}>Login</button>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>

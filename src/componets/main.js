@@ -13,12 +13,7 @@ class Main extends Component {
             </p>
             <hr className="my-4" />
             <p>
-              Sign up for an account and explore.
-            </p>
-            <p className="lead">
-              <a className="btn btn-primary btn-lg" href="#" role="button">
-                Sign Up
-              </a>
+              Search for a Movie and Get Started
             </p>
           </div>
           </div>

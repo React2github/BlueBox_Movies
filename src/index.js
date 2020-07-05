@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import thunk from 'redux-thunk';
@@ -11,7 +11,7 @@ import {createStore, applyMiddleware} from 'redux';
 const initialState = {
   s: "",
   results: [],
-  selected: {},
+  selected: [],
   Shopping: [],
   Wishlist: [],
   Rentals: [],
@@ -20,32 +20,32 @@ const initialState = {
 };
 
 
-function app (state = initialState,action) { 
+function reduxApp (state = initialState,action) { 
      switch (action.type) {
     case 'RENT':
       return {
         ...state,
-        Rentals: state.Rentals.concat('Added movie to rental list')
+        Rentals: state.Rentals + alert('Added movie to rental list')
       }
       case 'LIST':
         return {
           ...state,
-          Wishlist: state.Wishlist.concat('Saved Movie to Wishlist')
+          Wishlist: state.Wishlist + alert('Saved Movie to Wishlist')
         }
       case 'SHOP':
         return {
           ...state,
-          Shopping: state.Shopping.concat('Added Movie to Cart')
+          Shopping: state.Shopping + alert('Added Movie to Cart')
         }
       case 'RATE':
         return {
          ...state,
-         Rating: state.Rating.concat('Added movie to top 5 list')
+         Rating: state.Rating + alert('Added movie to top 5 list')
         }
       case 'BAD':
         return {
         ...state,
-        Bad: state.Bad.concat('Added movie to bad list')
+        Bad: state.Bad + alert('Added movie to bad list')
         }
       default:
         return state 
@@ -54,7 +54,7 @@ function app (state = initialState,action) {
 
 
 
-const store = createStore(app, applyMiddleware(thunk)) 
+const store = createStore(reduxApp, applyMiddleware(thunk)) 
 
 
 

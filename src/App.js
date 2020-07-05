@@ -6,6 +6,7 @@ import Search from "./componets/search"
 import Results from "./componets/results"
 import axios from "axios"
 import Popup from "./componets/Popup"
+import Cards from "./componets/cards"
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
    s: "",
    results: [],
    selected: {},
+   WishList: []
   });
   const apiurl="http://www.omdbapi.com/?apikey=2d91e6e4";
 
@@ -51,17 +53,27 @@ const search = (e) => {
    });
  }
 
+ function hello () {
+   console.log('hello')
+ }
 
+ const Wishlist = () => {
+  setState(prevState => {
+    return { ...prevState, WishList: {hello} }
+})
+}
 
   return (
     <div>
     <Header />
     <Main />
+
     <Search handleInput={handleInput} search={search}/>
     <Results results={state.results} openPopup={openPopup}/>
-
     {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} 
-    closePopup={closePopup} /> : false }
+    closePopup={closePopup} Wishlist={Wishlist}/> : false }
+    {( typeof state.results != "undefined") ? <Cards /> : false }
+    
     <Footer />
     </div>
   );

@@ -5,13 +5,18 @@ import { connect } from 'react-redux';
     add = () => {
         this.props.add();
     }
-
+  
     render() {
+        const { selected } = this.props;
+        
         return (
+            <section>
             <div>
+                <span>{console.log(selected.Title)}</span>
                 <span>{this.props.Wishlist}</span>
                 <button onClick={this.add}>Cart</button>
             </div>
+            </section>
         )
     }
 }
