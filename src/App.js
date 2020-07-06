@@ -16,7 +16,7 @@ function App() {
    selected: {},
    WishList: []
   });
-  const apiurl="http://www.omdbapi.com/?apikey=2d91e6e4";
+  const apiurl="https://www.omdbapi.com/?apikey=2d91e6e4";
 
 const search = (e) => {
   if(e.key === "Enter") {
