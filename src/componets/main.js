@@ -5,7 +5,7 @@ class Main extends Component {
     state = {  }
     render() { 
         return (
-          <div className="jumbotron">
+          <div className="jumbotron" id="home">
             <div className="test"> 
             <h1 className="display-4">New Releases</h1>
             <p className="lead">
